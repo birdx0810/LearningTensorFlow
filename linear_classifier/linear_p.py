@@ -1,4 +1,4 @@
-# 
+# Import required modules
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import accuracy_score
@@ -17,26 +17,19 @@ batch_size = 32
 num_labels = 10
 
 # Load dataset
-mnist_train = torchvision.datasets.mnist('path/to/mnist_root/', train=True, download=True)
-mnist_test = torchvision.datasets.mnist('path/to/mnist_root/', train=False, download=True)
+train_dataset = torchvision.datasets.mnist('path/to/mnist_root/', train=True, download=True)
+test_dataset = torchvision.datasets.mnist('path/to/mnist_root/', train=False, download=True)
 
 train_dataloader = torch.utils.data.DataLoader(
-    mnist_train,
+    train_dataset,
     batch_size=batch_size,
     shuffle=True
 )
-
 test_dataloader = torch.utils.data.DataLoader(
-    mnist_test,
+    test_dataset,
     batch_size=batch_size,
     shuffle=False
 )
-
-label_binarizer = LabelBinarizer()
-label_binarizer.fit(range(num_labels))
-
-train_onehot = label_binarizer.transform(train_y)
-test_onehot = label_binarizer.transform(test_y)
 
 class Model(torch.nn.Module):
     def __init__(self):
@@ -60,16 +53,10 @@ criterion = torch.nn.CrossEntropyLoss()
 start = time.time()
 # Training Loop
 for epoch in range(epochs):
-    total_loss = 0.
-    iterations = int(len(train_x)/batch_size)
-    # Loop over all batches
-    for i in trange(iterations):
-        # Get mini batch
-        batch_xs, batch_ys = get_batch(train_x, train_y, i, batch_size)
-        
-        batch_xs = torch.FloatTensor(batch_xs)
-        batch_ys = torch.LongTensor(batch_ys)
-        
+    total_loss = 0.    
+    # Get mini batch
+    for batch_xs, batch_ys in tqdm(data):
+
         model.zero_grad()
         
         batch_ps = model(batch_xs)
@@ -82,10 +69,11 @@ for epoch in range(epochs):
     
 print(f"Time taken: {time.time() - start} sec")
 
-model.eval()
-test_x = torch.FloatTensor(test_x)
-test_p = model(test_x)
-test_p = test_p.detach().numpy().argmax(-1)
+test_p = []
+for test_x, text_y in test_dataloader:
+    model.eval()
+    test_x = torch.FloatTensor(test_x)
+    test_p.append(model(test_x).detach().numpy().argmax(-1))
 
 accuracy = accuracy_score(test_y, test_p)
 print(f"Acc: {accuracy}")
