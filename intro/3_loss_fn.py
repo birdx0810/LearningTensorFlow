@@ -66,25 +66,37 @@ def hinge_loss(D, Y, margin):
     )
 
 def triplet_loss(A, P, N, margin, metric):
-    if metric == "cosine_similarity":
-        sim = cosine_similarity
-        return sum(
-            max(0, margin - sim(A, P) + sim(A, N))
-        )
-    elif metric == "euclidean_distance":
-        d = euclidean_distances
-        return sum(
-            max(0, margin + d(A, P) - d(A, N))
-        )
+    """
+    \max(0, m + d(A, P) - d(A, N))
+    """
+    loss = []
+    for a, p, n in zip(A, P, N):
+        if metric == "cosine_similarity":
+            sim = cosine_similarity
+            loss.append(
+                max(0, margin - sim(a, p) + sim(a, n))
+            )
+        elif metric == "euclidean_distance":
+            d = euclidean_distances
+            loss.append(
+                max(0, margin + d(a, p) - d(a, n))
+            )
+    return np.array(loss)/len(A)
 
-def ranking_loss(A, P, N, M):
+def ranking_loss(Y, X_1, X_2, margin):
     """
     a.k.a. Triplet Loss
+    \max(0, -y * x_1 - x_2)
 
     Args:
-    - A: anchor
-    - P: positive
-    - N: negative
+    - Y: rank relation
+    - X_1: input 1
+    - X_2: input 2
     - M: margin
     """
-    pass
+    loss = []
+    for y, x_1, x_2 in zip (Y, X_1, X_2):
+        loss.append(
+            max(0, margin - y * (x_1 - x_2))        
+        )
+    return np.array(loss)/len(Y)
