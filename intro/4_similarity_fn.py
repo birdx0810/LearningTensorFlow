@@ -35,12 +35,13 @@ def cosine_similarity(X, Y):
 
 def attention(X, Y):
     """
+    Attention weight matrix between elements of two vectors
     softmax((X @ Y.T)/\sqrt(len(X)))
     """
-    nominator = X @ Y.T
-    denominator = np.sqrt(len(X))
-    return softmax(
-        nominator
-        /
-        denominator
-    ).sum()
+
+    numerator = X @ Y.T
+    denominator = np.sqrt(X.shape[-1])
+    return (
+        softmax(numerator/denominator) # 512 * 10 
+    )
+
