@@ -1,4 +1,4 @@
-# Must Read DL papers
+# Architectures
 
 ## CNN
 
@@ -10,8 +10,9 @@
 
 ## Autoencoder
 
-### Variational Autoencoders (VAE)
+### Variational Autoencoders \(VAE\)
 
-### Generative Adversarial Networks (GAN)
+### Generative Adversarial Networks \(GAN\)
 
 ### NAS
+
