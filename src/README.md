@@ -20,7 +20,7 @@ Models implemented include:
 - Advanced (PyTorch Only)
     - [ ] AttSeq2Seq for machine translation
     - [ ] PGNet for abstractive summarization
-    - [ ] MemNet for question answering
+    - [ ] MemN2N for question answering
     - [ ] MIDI-VAE for music style transfer
     - [ ] DCGAN for synthetic image generation
     - [ ] ResNet for large-scale image classification
