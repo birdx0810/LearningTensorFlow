@@ -15,7 +15,6 @@ def l1_distance(X, Y):
     """
     return np.abs(X - Y).sum()
 
-
 def l2_distance(X, Y):
     """
     a.k.a. Euclidean distance

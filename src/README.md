@@ -1,12 +1,15 @@
 # Awesome Deep Learning Code [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-This directory holds the code implementation of some functions used in deep learning that are implemented using NumPy and also the implementation of some basic models using TensorFlow (v1), Keras (TF2.0), and PyTorch for Deep Learning in text, audio, and image. 
+This directory holds the code implementation of some functions used in deep learning that are implemented using NumPy/SciPy and also the implementation of some basic models using TensorFlow (v1), Keras (TF2.0), and PyTorch for Deep Learning in text, audio, and image. 
 
 Models implemented include:
-- Intro (NumPy)
-    - [ ] Activation functions
-    - [ ] Loss functions
-    - [ ] Similarity/distance functions
+- Intro (NumPy/Numba/CuPy)
+    - [x] Activation functions
+    - [x] Similarity/distance functions
+    - [x] Loss functions
+    - [x] Basic Perceptron
+    - [ ] Mathematic Functions
+    - [ ] Statistical Functions
 - Basic (TF, Keras, PyTorch)
     - [ ] MLP for tabular data classification (Titanic)
     - [ ] RNN for text classification (Yelp Polarity)
