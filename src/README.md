@@ -12,12 +12,16 @@ Models implemented include:
     - [ ] Statistical Functions
 - Basic (TF, Keras, PyTorch)
     - [ ] MLP for tabular data classification (Titanic)
+    - [ ] AE for time series anomaly detection (NAB)
     - [ ] RNN for text classification (Yelp Polarity)
     - [ ] RNN for audio classification (YesNo)
     - [ ] CNN for time series classification (ECG5000)
     - [ ] CNN for image classification (CIFAR10)
 - Advanced (PyTorch Only)
-    - [ ] AttSeq2Seq for neural dialog generation
+    - [ ] AttSeq2Seq for machine translation
+    - [ ] PGNet for abstractive summarization
+    - [ ] MemNet for question answering
     - [ ] MIDI-VAE for music style transfer
     - [ ] DCGAN for synthetic image generation
-
+    - [ ] ResNet for large-scale image classification
+    - [ ] R-CNN for object detection
