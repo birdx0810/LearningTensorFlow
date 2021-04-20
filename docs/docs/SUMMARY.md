@@ -5,6 +5,7 @@
   * [Regularization](../dl/regularization.md)
   * [Optimization](../dl/optimization.md)
   * [Architectures](../dl/papers.md)
+  * [Explainability](../dl/explainability.md)
 * [Computer Vision](../cv.md)
 * [Natural Language Processing](../nlp/README.md)
   * [Metrics and Evaluations](../nlp/metrics.md)

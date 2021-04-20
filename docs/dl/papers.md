@@ -1,18 +1,48 @@
 # Architectures
 
-## CNN
+## Linear Neural Networks
 
-## LSTM
 
-## GRU
 
-## GNN
+### Activation Functions
 
-## Autoencoder
+#### Sigmoid
 
-### Variational Autoencoders \(VAE\)
+#### Tanh
 
-### Generative Adversarial Networks \(GAN\)
+#### ReLU
 
-### NAS
+#### Softmax
+
+
+
+## Convolutional Neural Networks
+
+
+
+## Recurrent Neural Networks
+
+### Long Short-Term Memory Networks
+
+
+
+### Gated Recurrent Unit Networks
+
+
+
+## Memory Networks
+
+
+
+## Auto-Encoders
+
+### Denoising Auto-Encoders
+
+### Variational Auto-Encoders
+
+
+
+## Transformers
+
+
 
