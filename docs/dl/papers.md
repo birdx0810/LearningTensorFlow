@@ -34,6 +34,12 @@
 
 
 
+
+
+## Pointer Networks
+
+
+
 ## Auto-Encoders
 
 ### Denoising Auto-Encoders
@@ -45,4 +51,8 @@
 ## Transformers
 
 
+
+## Other
+
+### Echo State Networks
 
