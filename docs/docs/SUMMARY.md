@@ -18,5 +18,9 @@
   * [NLP Datasets and Benchmarks](../nlp/dataset.md)
 * [Audio and Signal Processing](../asp.md)
 * [Time Series](../ts/README.md)
+  * [Forecasting](../ts/forecasting.md)
+  * [Classification](../ts/classification.md)
+  * [Imputation](../ts/imputation.md)
+  * [Generation](../ts/generation.md)
   * [Models](../ts/models.md)
 
