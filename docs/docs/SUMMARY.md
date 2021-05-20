@@ -8,6 +8,7 @@
   * [Others Techniques](../dl/others-techniques.md)
   * [Model Analysis](../dl/explainability.md)
   * [Compression](../dl/compression.md)
+  * [Reinforcement Learning](../dl/reinforcement-learning.md)
 * [Computer Vision](../cv/README.md)
   * [Image Recognition](../cv/image-recognition.md)
   * [Object Detection](../cv/object-detection.md)
